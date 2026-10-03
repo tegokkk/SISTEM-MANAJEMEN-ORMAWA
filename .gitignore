@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Build output and caches
+.next/
+.turbo/
+dist/
+build/
+coverage/
+out/
+playwright-report/
+test-results/
+
+# Local secrets and environment files
+.env*
+!.env.example
+**/.env*
+!**/.env.example
+cookie.txt
+
+# Logs and local tooling
+*.log
+.vercel/
+.DS_Store
+*.tsbuildinfo
