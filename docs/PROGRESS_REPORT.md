@@ -1,6 +1,7 @@
 # Laporan Progres Pengembangan PBL
 
-**Pembaruan terakhir:** 30 September 2026  
+**Pembaruan backlog:** 3 Oktober 2026
+**Validasi teknis terakhir:** 30 September 2026
 **Sumber:** [`TASK_LIST.md`](TASK_LIST.md)
 
 ## Ringkasan Eksekutif
@@ -14,7 +15,7 @@
 | Skenario penerimaan tervalidasi       |  3 dari 14 |
 | Skenario penerimaan belum tervalidasi | 11 dari 14 |
 
-Sebagian besar fitur utama aplikasi telah diimplementasikan. Pekerjaan yang tersisa terkonsentrasi pada validasi menggunakan MySQL, pengujian alur lengkap seluruh aktor, kesiapan deployment, dan dokumentasi akhir. Beberapa task yang belum dicentang sebenarnya sudah memiliki implementasi awal, tetapi belum dapat dinyatakan selesai karena belum diuji pada lingkungan yang diperlukan.
+Sebagian besar fitur utama aplikasi telah diimplementasikan. Pekerjaan yang tersisa terkonsentrasi pada verifikasi Docker/reverse proxy, validasi aksesibilitas dan UAT, konfigurasi reset password pada deployment, kesiapan production, dan dokumentasi akhir. Beberapa task terbuka sudah memiliki implementasi awal, tetapi belum dapat dinyatakan selesai karena belum diuji pada lingkungan yang diperlukan. Dari 14 skenario penerimaan, 3 telah dicentang dan 11 masih menunggu validasi serta pencatatan bukti.
 
 ## Hasil Validasi Terakhir
 
@@ -157,13 +158,12 @@ Skenario yang sudah tervalidasi adalah otorisasi download proposal/bukti transak
 
 ## Urutan Pengerjaan Berikutnya
 
-1. Sediakan Docker dan jalankan seluruh stack frontend, backend, MySQL, serta Nginx.
-2. Jalankan migrasi dan seed akun/data untuk seluruh aktor.
-3. Lengkapi pengujian keyboard dan screen reader seluruh portal serta skenario penerimaan wajib.
-4. Jalankan pengujian performa dan UAT bersama perwakilan aktor.
-5. Siapkan staging dan production, lalu lakukan migrasi dan smoke test.
-6. Konfigurasikan provider email reset password.
-7. Selesaikan laporan, presentasi, dan video demo.
+1. Selesaikan `SETUP-016` dan `SETUP-017`: validasi Docker Compose, MySQL, frontend/backend, dan reverse proxy `/api`.
+2. Selesaikan `QA-010` dengan screen reader nyata dan `QA-012` lewat UAT; validasi 11 skenario penerimaan yang belum dicentang dan simpan bukti.
+3. Siapkan deployment berurutan melalui `REL-001`–`REL-006`: environment, secrets, HTTPS/domain, database/backup, private storage, dan migrasi terkontrol.
+4. Tentukan lingkup `AUTH-016`, lalu konfigurasi provider email dan verifikasi reset password pada deployment.
+5. Deploy dan jalankan `REL-014` smoke test; setelah itu selesaikan `REL-012` presentasi/video dan `REL-013` laporan akhir.
+6. Putuskan apakah `MSG-009` attachment pesan masuk lingkup proyek; jika tidak, catat sebagai out of scope.
 
 ## Kesimpulan
 

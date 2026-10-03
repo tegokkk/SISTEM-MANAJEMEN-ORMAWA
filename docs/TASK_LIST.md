@@ -95,6 +95,13 @@ Konfigurasi Docker frontend/backend/MySQL dan reverse proxy Nginx telah dibuat, 
 - Seluruh fixture QA-008 dan QA-011 terverifikasi bersih setelah pengujian.
 - Regresi E2E terakhir lulus dengan 42 passed dan 24 skipped.
 
+## Status Backlog — 3 Oktober 2026
+
+- 201 dari 216 task ber-ID telah selesai; 15 task masih terbuka. Kriteria penerimaan dihitung terpisah.
+- 3 dari 14 skenario penerimaan telah dicentang; 11 perlu divalidasi dan dicatat setelah pengujian.
+- Catatan validasi teknis terakhir tetap 30 September 2026. Pembaruan ini merapikan backlog dan belum menjalankan validasi baru.
+- `MSG-009` bersifat opsional: putuskan terlebih dahulu apakah lampiran pesan memang masuk lingkup PBL.
+
 ## 0. Discovery dan Validasi
 
 - [x] `P0 DOC-001` Kumpulkan file skema/dump MySQL asli.
@@ -367,6 +374,15 @@ Konfigurasi Docker frontend/backend/MySQL dan reverse proxy Nginx telah dibuat, 
 - [ ] `P1 REL-012` Buat presentasi dan video demonstrasi PBL.
 - [ ] `P1 REL-013` Buat laporan analisis, desain, implementasi, pengujian, dan evaluasi.
 - [ ] `P0 REL-014` Jalankan smoke test setelah deployment.
+
+## Pekerjaan Tersisa dan Urutan Berikutnya
+
+1. **Siapkan stack yang bisa diuji:** selesaikan `SETUP-016` dan `SETUP-017` dengan Docker Compose, MySQL, frontend/backend, dan reverse proxy `/api`; jalankan konfigurasi, build image, dan smoke test container.
+2. **Validasi aksesibilitas dan kebutuhan pengguna:** selesaikan `QA-010` dengan screen reader nyata dan `QA-012` melalui UAT perwakilan aktor. Tinjau 11 skenario penerimaan terbuka dan centang hanya yang memiliki bukti uji.
+3. **Siapkan staging/production:** selesaikan `REL-001` sampai `REL-006` secara berurutan—environment, secrets, HTTPS/domain, database dan backup, private file storage, lalu migrasi terkontrol.
+4. **Putuskan dan tuntaskan pemulihan akun:** tentukan lingkup `AUTH-016`, konfigurasi provider email pada deployment, lalu verifikasi alur reset password end-to-end.
+5. **Rilis dan dokumentasikan:** deploy, selesaikan `REL-014` smoke test, kemudian siapkan `REL-012` presentasi/video dan `REL-013` laporan akhir.
+6. **Tutup keputusan opsional:** putuskan apakah `MSG-009` diperlukan. Jika tidak, tandai out of scope dengan persetujuan tim; jika ya, implementasikan dan uji attachment privat.
 
 ## Skenario Penerimaan Wajib
 
